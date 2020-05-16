@@ -1,7 +1,8 @@
 {
     "variables": {
         "aws_access_key": "",
-        "aws_secret_key": ""
+        "aws_secret_key": "",
+        "destination_regions": "us-west-1,us-west-2,us-east-1,us-east2"
     },
     "builders": [
         {
@@ -20,7 +21,7 @@
         },
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
-        "ami_name": "packer-example {{timestamp}}"
+        "ami_name": "packer-vanilla-t2.micro {{timestamp}}"
         }
     ]
 }
