@@ -1,4 +1,7 @@
-![Packer Templates](https://github.com/REDtalks/hashistack-aws-packer/workflows/Test%20packer%20AMI%20definition/badge.svg)
+![Build Packer Template](https://github.com/REDtalks/hashistack-aws-packer/workflows/Build%20Packer%20Template/badge.svg)
+
+![Validate Packer Template](https://github.com/REDtalks/hashistack-aws-packer/workflows/Validate%20Packer%20Template/badge.svg)
+
 
 # hashistack-aws-packer
 Repo for maintaining AWS AMI's via GitHub Actions 
