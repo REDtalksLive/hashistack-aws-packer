@@ -25,4 +25,4 @@ jobs:
     - name: Check container
       uses: docker://hashicorp/packer:light
       with:
-        args: /bin/sh -c "validate basic-ami.json"
+        args: /bin/sh -c "validate /github/workspace/basic-ami.json"
