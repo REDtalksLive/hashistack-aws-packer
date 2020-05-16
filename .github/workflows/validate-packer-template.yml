@@ -5,7 +5,7 @@ name: Validate Packer Template
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  pull_request:
+  push:
     branches-ignore: 
       - master
 
@@ -19,7 +19,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Check container
+    - name: Run Packer Container - Validation
       uses: docker://hashicorp/packer:light
       with:
         args: "validate /github/workspace/basic-ami.json"
