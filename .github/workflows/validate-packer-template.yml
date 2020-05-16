@@ -25,9 +25,9 @@ jobs:
       id: getfile
       run: |
         echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
-      - name: echo output
-        run: |
-          echo ${{ steps.getfile.outputs.files }}
+    - name: echo output
+      run: |
+        echo ${{ steps.getfile.outputs.files }}
     - name: Run Packer Container - Validation
       uses: docker://hashicorp/packer:light
       with:
