@@ -16,13 +16,13 @@ jobs:
   validate:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container:
-      image: hashicorp/packer:light
       
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - run: |
-         validate basic-ami.json
+#    - uses: actions/checkout@master
+    - name: Check container
+      uses: docker://hashicorp/packer:light
+      with:
+        args: /bin/sh -c "validate basic-ami.json"
