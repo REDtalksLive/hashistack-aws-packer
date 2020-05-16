@@ -20,7 +20,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Check container
+    - name: Run Packer Container - Build & Deploy
       uses: docker://hashicorp/packer:light
       env: # Or as an environment variable
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
