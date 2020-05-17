@@ -2,7 +2,7 @@
     "variables": {
         "aws_access_key": "",
         "aws_secret_key": "",
-        "destination_regions": "us-west-1,us-west-2,us-east-1,us-east2"
+        "destination_regions": "us-west-1,us-west-2,us-east-1,us-east-2"
     },
     "builders": [
         {
