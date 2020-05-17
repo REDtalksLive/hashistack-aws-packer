@@ -9,7 +9,7 @@ on:
     branches-ignore: 
       - master
     paths:
-      - ${{ secrets.PACKER_TEMPLATE }}
+      - '${{ secrets.PACKER_TEMPLATE }}'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
