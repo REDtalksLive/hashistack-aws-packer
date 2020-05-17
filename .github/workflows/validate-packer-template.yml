@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo ${{ env.PACKER_TEMPLATE }}
-      - run: echo $(`cat TEMPLATE`)
+      - run: echo $(cat TEMPLATE)
   # This workflow contains a single job called "build"
   validate:
     # The type of runner that the job will run on
