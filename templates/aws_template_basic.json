@@ -24,4 +24,5 @@
             "ssh_username": "ubuntu",
             "ami_regions": "{{user `destination_regions`}}"
         }
-    ]}
+    ]
+}

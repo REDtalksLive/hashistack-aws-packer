@@ -3,7 +3,7 @@
 name: Validate Packer Template
 
 env:
-  PACKER_TEMPLATE: ${{ secrets.PACKER_TEMPLATE }}
+  PACKER_TEMPLATE1: ${{ secrets.PACKER_TEMPLATE }}
 
   # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -12,13 +12,14 @@ on:
     branches-ignore: 
       - master
     paths:
-#      - 'templates/aws_template_basic.json'
-      - '${{env.PACKER_TEMPLATE}}'
+      - 'templates/aws_template_basic.json'
+#      - '${{env.PACKER_TEMPLATE}}'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: echo ${{ env.PACKER_TEMPLATE }}
       - run: echo $(`cat TEMPLATE`)
   # This workflow contains a single job called "build"
