@@ -9,7 +9,7 @@ on:
     branches-ignore: 
       - master
     paths:
-      - 'templates/*.json'
+      - 'templates/aws_template_basic.json'
 #      - ${{secrets.PACKER_TEMPLATE}}
 env:
   PACKER_TEMPLATE: ${{ secrets.PACKER_TEMPLATE }}
