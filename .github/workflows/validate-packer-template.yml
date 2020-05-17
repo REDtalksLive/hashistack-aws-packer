@@ -33,4 +33,4 @@ jobs:
     - name: Run Packer Container - Validate Template
       uses: docker://hashicorp/packer:light
       with:
-        args: "validate /github/workspace/${{ env.PACKER_TEMPLATE }}"
+        args: "validate /github/workspace/$(cat TEMPLATE)"
