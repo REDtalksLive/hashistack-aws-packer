@@ -9,16 +9,16 @@ on:
     branches-ignore: 
       - master
     paths:
-      - 'templates/aws_template_basic.json'
+      - 'templates/*.json'
 #      - ${{secrets.PACKER_TEMPLATE}}
 env:
-  PACKER_TEMPLATE: ${{secrets.PACKER_TEMPLATE}}
+  PACKER_TEMPLATE: ${{ secrets.PACKER_TEMPLATE }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ env PACKER_TEMPLATE }}
+      - run: echo ${{ env.PACKER_TEMPLATE }}
   # This workflow contains a single job called "build"
   validate:
     # The type of runner that the job will run on
