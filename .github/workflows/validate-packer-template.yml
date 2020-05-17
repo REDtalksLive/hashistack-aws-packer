@@ -3,7 +3,7 @@
 name: Validate Packer Template
 
 env:
-  PACKER_TEMPLATE: $(cat TEMPLATE)
+  PACKER_TEMPLATE: echo $(cat TEMPLATE)
 
   # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -33,4 +33,4 @@ jobs:
     - name: Run Packer Container - Validate Template
       uses: docker://hashicorp/packer:light
       with:
-        args: "validate /github/workspace/$(cat TEMPLATE)"
+        args: "validate /github/workspace/${{env.PACKER_TEMPLATE}}"
