@@ -1,0 +1,51 @@
+{
+    "variables": {
+        "AWS_ACCESS_KEY": "",
+        "AWS_SECRET_KEY": "",
+        "DESTINATION_REGIONS": "us-west-1",
+        "GITHUB_TOKEN": ""
+    },
+    "builders": [
+        {
+            "ami_name": "packer-vanilla-t2.micro",
+            "force_deregister": "true",
+            "force_delete_snapshot": "true",
+            "type": "amazon-ebs",
+            "access_key": "{{user `AWS_ACCESS_KEY`}}",
+            "secret_key": "{{user `AWS_SECRET_KEY`}}",
+            "region": "us-west-1",
+            "source_ami_filter": {
+                "filters": {
+                    "virtualization-type": "hvm",
+                    "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
+                    "root-device-type": "ebs"
+                },
+                "owners": ["amazon"],
+                "most_recent": true
+            },
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_regions": "{{user `DESTINATION_REGIONS`}}",
+            "user_data_file": "../scripts/ami_user_data.sh"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [ "echo '{{user `GITHUB_TOKEN`}} > ~/token.txt" ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sleep 30",
+                "sudo yum update -y",
+                "sudo yum install git make gcc -y",
+                "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash",
+                "source ~/.bashrc",
+                "nvm install 12",
+                "npm install -g npm@latest",
+                "node app/webserver.js"
+            ]
+        }
+    ]
+}
