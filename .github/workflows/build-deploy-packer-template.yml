@@ -9,7 +9,7 @@ on:
     branches: 
       - master
     paths:
-      - 'templates/aws_template.json'
+      - 'templates/aws_template-intermediate.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,5 +27,6 @@ jobs:
       env: # Grab the AWS environment variables for deployment
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+        GITHUB_TOKEN: ${{ secrets.AWS_WEB_SERVER_GITHUB_TOKEN }}
       with:
-        args: "build /github/workspace/templates/aws_template.json"
+        args: "build /github/workspace/templates/aws_template-intermediate.json"
