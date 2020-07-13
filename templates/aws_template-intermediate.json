@@ -47,4 +47,5 @@
                 "node app/webserver.js"
             ]
         }
-    ]}
+    ]
+}
