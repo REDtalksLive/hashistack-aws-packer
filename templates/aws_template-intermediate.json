@@ -26,7 +26,7 @@
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_regions": "{{user `DESTINATION_REGIONS`}}",
-            "user_data_file": "../scripts/ami_user_data.sh"
+            "user_data_file": "/github/workspace/scripts/ami_user_data.sh" 
         }
     ],
     "provisioners": [
