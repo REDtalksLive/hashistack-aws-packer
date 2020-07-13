@@ -8,7 +8,7 @@ on:
     branches-ignore:
       - master
     paths:
-      - 'templates/aws_template-intermediate.json'
+      - 'templates/aws_template.json'
   pull_request:
     branches-ignore:
       - master
