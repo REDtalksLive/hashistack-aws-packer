@@ -33,7 +33,7 @@
             "type": "shell",
             "inline": [
                 "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
-                "ls -la /home"
+                "ls -la /"
             ]
         },
         {
