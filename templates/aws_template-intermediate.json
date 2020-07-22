@@ -3,7 +3,7 @@
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
         "DESTINATION_REGIONS": "us-west-1",
-        "GITHUB_TOKEN": "{{user `GITHUB_TOKEN`}}"
+        "GITHUB_TOKEN": ""
     },
     "builders": [
         {
@@ -33,7 +33,7 @@
         {
             "type": "shell",
             "inline": [
-                "echo $GITHUB_TOKEN > /home/ubuntu/token.txt",
+                "echo {{user `GITHUB_TOKEN`}} > /home/ubuntu/token.txt",
                 "cat /home/ubuntu/token.txt",
                 "cat /github/workspace/scripts/ami_user_data.sh > /home/ubuntu/ami_user_data.sh"
             ]
