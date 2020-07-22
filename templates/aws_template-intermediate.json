@@ -25,14 +25,18 @@
             },
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_regions": "{{user `DESTINATION_REGIONS`}}",
-            "user_data_file": "/github/workspace/scripts/ami_user_data.sh"
+            "ami_regions": "{{user `DESTINATION_REGIONS`}}"
         }
     ],
     "provisioners": [
         {
             "type": "shell",
-            "inline": [ "echo '{{user `GITHUB_TOKEN`}} > ~/token.txt" ]
+            "inline": [
+                "echo '{{user `GITHUB_TOKEN`}} > ~/token.txt",
+                "ls /github/home",
+                "ls /github/workflow",
+                "ls /github/workspace"
+            ]
         },
         {
             "type": "shell",
