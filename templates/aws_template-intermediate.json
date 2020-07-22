@@ -33,7 +33,7 @@
         {
             "type": "shell",
             "inline": [
-                "echo {{user `GITHUB_TOKEN`}} > ~/token.txt",
+                "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
                 "cat ~/token.txt"
             ]
         }
