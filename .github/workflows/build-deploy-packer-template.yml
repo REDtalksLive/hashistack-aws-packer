@@ -35,4 +35,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.AWS_WEB_SERVER_GITHUB_TOKEN }}
       with:
         args: "build /github/workspace/templates/aws_template-intermediate.json"
-        volumes: /home/github/workspace:/github/workspace
+        volumes: $GITHUB_WORKSPACE:/home/github/workspace

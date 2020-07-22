@@ -34,9 +34,7 @@
             "inline": [
                 "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
                 "cat ~/token.txt",
-                "ls -la /home",
-                "ls -la /home/scripts",
-                "ls -la /home/scripts/ami_user_data.sh"
+                "ls -la /home"
             ]
         }
     ]
