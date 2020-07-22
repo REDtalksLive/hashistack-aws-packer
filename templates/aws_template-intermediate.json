@@ -33,7 +33,7 @@
         {
             "type": "file",
             "source": "/github/workspace/scripts/ami_user_data.sh",
-            "desintation": "/home/ubuntu/ami_user_data.sh"
+            "destination": "/home/ubuntu/ami_user_data.sh"
         },
         {
             "type": "shell",
