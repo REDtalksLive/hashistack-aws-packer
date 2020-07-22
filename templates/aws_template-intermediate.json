@@ -31,11 +31,16 @@
     ],
     "provisioners": [
         {
+            "type": "file",
+            "source": "/github/workspace/scripts/ami_user_data.sh",
+            "desintation": "/home/ubuntu/ami_user_data.sh"
+        },
+        {
             "type": "shell",
             "inline": [
                 "echo {{user `GITHUB_TOKEN`}} > /home/ubuntu/token.txt",
                 "cat /home/ubuntu/token.txt",
-                "cat /github/workspace/scripts/ami_user_data.sh > /home/ubuntu/ami_user_data.sh"
+                "ls /home/ubuntu/"
             ]
         }
     ]
