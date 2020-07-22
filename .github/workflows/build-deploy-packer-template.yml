@@ -6,11 +6,10 @@ name: Build & Deploy Packer Template
 # events but only for the master branch
 on:
   push:
-    branches-ignore:
+    branches:
       - master
     paths:
       - 'templates/aws_template-intermediate.json'
-
   pull_request:
     branches: 
       - master
