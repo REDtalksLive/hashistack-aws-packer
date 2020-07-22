@@ -33,9 +33,8 @@
             "type": "shell",
             "inline": [
                 "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
-                "ls /github/home",
-                "ls /github/workflow",
-                "ls /github/workspace"
+                "ls /github/workspace",
+                "ls /github/workspace/scripts"
             ]
         },
         {
