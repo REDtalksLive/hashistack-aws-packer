@@ -33,20 +33,10 @@
             "type": "shell",
             "inline": [
                 "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
-                "ls -la /"
-            ]
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "sleep 30",
-                "sudo yum update -y",
-                "sudo yum install git make gcc -y",
-                "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash",
-                "source ~/.bashrc",
-                "nvm install 12",
-                "npm install -g npm@latest",
-                "node app/webserver.js"
+                "cat ~/token.txt",
+                "ls -la /home",
+                "ls -la /home/scripts",
+                "ls -la /home/scripts/ami_user_data.sh"
             ]
         }
     ]
