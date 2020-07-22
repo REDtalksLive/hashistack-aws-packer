@@ -33,7 +33,7 @@
             "type": "shell",
             "inline": [
                 "echo '{{user `GITHUB_TOKEN`}}' > ~/token.txt",
-                "ls /home/runner/work/hashistack-aws-packer/hashistack-aws-packer"
+                "ls -la /home"
             ]
         },
         {
