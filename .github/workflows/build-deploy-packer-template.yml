@@ -28,11 +28,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run Packer Container - Build & Deploy
       # pull official hashicorp packer container for docker hub
-      uses: 'docker'
-      image: 'Dockerfile'
+      uses: docker://hashicorp/packer:light
       env: # Grab the AWS environment variables for deployment
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
         GITHUB_TOKEN: ${{ secrets.AWS_WEB_SERVER_GITHUB_TOKEN }}
       with:
-        args: "build /github/workspace/templates/aws_template-intermediate.json"
+        args: "-v /github/workspace/scripts:/home/scripts/ build /github/workspace/templates/aws_template-intermediate.json"
