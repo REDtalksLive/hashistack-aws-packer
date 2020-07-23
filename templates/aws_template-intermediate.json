@@ -1,7 +1,7 @@
 {
     "variables": {
-        "AWS_ACCESS_KEY": "",
-        "AWS_SECRET_KEY": "",
+        "AWS_ACCESS_KEY": "{{env `AWS_ACCESS_KEY`}}",
+        "AWS_SECRET_KEY": "{{env `AWS_SECRET_KEY`}}",
         "DESTINATION_REGIONS": "us-west-1",
         "AWS_GITHUB_TOKEN": "{{env `AWS_GITHUB_TOKEN`}}"
     },
