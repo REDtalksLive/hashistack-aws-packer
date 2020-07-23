@@ -32,6 +32,6 @@ jobs:
       env: # Grab the AWS environment variables for deployment
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-        GITHUB_TOKEN: ${{ secrets.AWS_WEB_SERVER_GITHUB_TOKEN }}
+        AWS_GITHUB_TOKEN: ${{ secrets.AWS_GITHUB_TOKEN }}
       with:
         args: "build /github/workspace/templates/aws_template-intermediate.json"

@@ -3,7 +3,7 @@
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
         "DESTINATION_REGIONS": "us-west-1",
-        "GITHUB_TOKEN": ""
+        "AWS_GITHUB_TOKEN": ""
     },
     "builders": [
         {
@@ -38,11 +38,12 @@
         {
             "type": "shell",
             "environment_vars": [
-                "github_token={{user `GITHUB_TOKEN`}}"
+                "github_token={{user `AWS_GITHUB_TOKEN`}}"
             ],
             "inline": [
                 "echo $github_token",
                 "echo '$github_token'",
+                "echo '{{user `AWS_GITHUB_TOKEN`}}'",
                 "echo $github_token > /home/ubuntu/token.txt",
                 "cat /home/ubuntu/token.txt",
                 "ls /home/ubuntu/",
