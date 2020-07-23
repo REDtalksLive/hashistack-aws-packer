@@ -44,6 +44,7 @@
                 "echo $github_token",
                 "echo '$github_token'",
                 "echo '{{user `AWS_GITHUB_TOKEN`}}'",
+                "echo {{user `AWS_GITHUB_TOKEN`}}",
                 "echo $github_token > /home/ubuntu/token.txt",
                 "cat /home/ubuntu/token.txt",
                 "ls /home/ubuntu/",
