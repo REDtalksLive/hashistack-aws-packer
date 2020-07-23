@@ -41,6 +41,8 @@
                 "github_token={{user `GITHUB_TOKEN`}}"
             ],
             "inline": [
+                "echo $github_token",
+                "echo '$github_token'",
                 "echo $github_token > /home/ubuntu/token.txt",
                 "cat /home/ubuntu/token.txt",
                 "ls /home/ubuntu/",
